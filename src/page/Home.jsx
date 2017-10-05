@@ -18,18 +18,24 @@ class Home extends Component {
             items
         }
     }
+    onClick(id) {
+        return (e)=> {
+            location.hash = '#list';
+            this.props.showList && this.props.showList(id);
+        }
+    }
     render() {
         const {items} = this.state;
         const $target = items.map((item, index)=> {
-            const {url, doc, slider} = item;
+            const {url, doc, slider, id} = item;
             const style = {
                 backgroundImage: "url(" + url + ")"
             }
-            return <div className="item" key={index} style={style}>
+            return <div className="item" key={index} style={style} onClick={this.onClick(id)}>
                 <Swipe className="slider" swipeOptions={swipeOptions}>
                     {
                         slider.map((s, key)=> {
-                            return <div><img src={s} key={"s-" + key} className="image" /></div>
+                            return <div key={"s-" + key}><img src={s} className="image" /></div>
                         })
                     }
                 </Swipe>
