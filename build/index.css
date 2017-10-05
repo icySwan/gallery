@@ -89,6 +89,7 @@ p {
   padding: 3px;
   background-color: #eee;
   border-radius: 15px;
+  z-index: 2;
 }
 .list .more {
   padding: 15px;
@@ -105,10 +106,21 @@ p {
   background-color: #fff;
   display: flex;
   align-items: center;
+  z-index: 3;
+}
+.list .show::after {
+  content: 'loading uncompressed image...';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 24px;
+  margin-left: -120px;
+  margin-top: -14px;
 }
 .list .show .show-img {
   display: block;
   width: 100%;
+  z-index: 4;
 }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpbmRleC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

@@ -16,6 +16,7 @@
         padding: 3px;
         background-color: #eee;
         border-radius: 15px;
+        z-index: 2;
     }
     .more {
         padding: 15px;
@@ -32,9 +33,20 @@
         background-color: #fff;
         display: flex;
         align-items: center;
+        z-index: 3;
+        &::after {
+            content: 'loading uncompressed image...';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 24px;
+            margin-left: -120px;
+            margin-top: -14px;
+        }
         .show-img {
             display: block;
             width: 100%;
+            z-index: 4;
         }
     }
 }

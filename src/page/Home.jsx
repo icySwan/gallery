@@ -39,7 +39,7 @@ class Home extends Component {
         const $target = items.map((item, index)=> {
             const {url, doc, slider, id} = item;
             const style = {
-                backgroundImage: "url(" + url + ")"
+                backgroundImage: "url(" + url + pfx + ")"
             }
             return <div className="item" key={index} style={style} onClick={this.onClick(id)}>
                 {
