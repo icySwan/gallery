@@ -16,8 +16,18 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items
+            items,
+            enableSlider: false
         }
+    }
+    componentDidMount() {
+        const self = this;
+        let timer = setTimeout(()=> {
+            clearTimeout(timer);
+            self.setState({
+                enableSlider: true
+            })
+        }, 2000);
     }
     onClick(id) {
         return (e)=> {
@@ -25,21 +35,23 @@ class Home extends Component {
         }
     }
     render() {
-        const {items} = this.state;
+        const {items, enableSlider} = this.state;
         const $target = items.map((item, index)=> {
             const {url, doc, slider, id} = item;
             const style = {
                 backgroundImage: "url(" + url + ")"
             }
             return <div className="item" key={index} style={style} onClick={this.onClick(id)}>
-                <Swipe className="slider" swipeOptions={swipeOptions}>
+                {
+                    enableSlider ? <Swipe className="slider" swipeOptions={swipeOptions}>
                     {
                         slider.map((s, key)=> {
                             s += pfx;
                             return <div key={"s-" + key}><img src={s} className="image" /></div>
                         })
                     }
-                </Swipe>
+                </Swipe> : null
+                }
                 <div className="doc">
                     <h2 className="title">{doc.title}</h2>
                     <p className="des">{doc.des}</p>
