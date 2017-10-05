@@ -5,7 +5,8 @@ import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import reducer from './reducer';
-import App from './App';
+import Home from './Home';
+import List from './List';
 
 const middleware = [thunk];
 const store = createStore(
@@ -13,9 +14,16 @@ const store = createStore(
     applyMiddleware(...middleware)
 );
 
+let path = location.href.split('?')[0].split('/');
+path = path.pop().split('.')[0];
+
+let Page = Home;;
+if(path === 'list') {
+    Page = List;
+}
 render(
     <Provider store={store}>
-        <App />
+        <Page />
     </Provider>,
     document.getElementById('App')
 )

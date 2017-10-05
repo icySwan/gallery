@@ -20,8 +20,7 @@ class Home extends Component {
     }
     onClick(id) {
         return (e)=> {
-            location.hash = '#list';
-            this.props.showList && this.props.showList(id);
+            location.href='./list.html?id=' + id;
         }
     }
     render() {

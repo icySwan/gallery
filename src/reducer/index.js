@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import status from './status';
+import query from './query';
 
 const reduces = combineReducers({
-    status
+    query
 });
 
 export default reduces;

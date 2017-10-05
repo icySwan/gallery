@@ -7,6 +7,9 @@ import '../style/list.less';
 class List extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            list: getList(this.props.query.data)
+        }
     }
     render() {
         return <div className="list">list</div>;
