@@ -1,0 +1,37 @@
+.home {
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    .item {
+        width: 100%;
+        height: 50%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        color: #111;
+        background-size: auto 100%;
+        .doc {
+            width: 414px;
+            max-width: 100%;
+            padding: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, .6);
+        }
+        .des {
+            font-family: 'swan';
+            font-size: 16px;
+            padding: 4px;
+            color: #555;
+        }
+    }
+}
+@media (min-width:415px) {
+    .home {
+        .item {
+            height: 100%;
+            background-size: 100% auto;
+        }
+    }
+}
