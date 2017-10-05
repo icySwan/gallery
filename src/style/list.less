@@ -1,7 +1,19 @@
 .list {
+    position: relative;
+    min-height: 100%;
+    font-family: 'swan';
+    &::after {
+        content: 'loading images..';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-size: 40px;
+        margin-left: -100px;
+        margin-top: -24px;
+    }
     .cell {
         width: 100%;
-        margin: 3px;
+        padding: 3px;
         background-color: #eee;
         border-radius: 15px;
     }
@@ -9,7 +21,6 @@
         padding: 15px;
         text-align: center;
         color: #333;
-        font-family: 'swan';
         font-size: 20px;
     }
     .show {
