@@ -98,7 +98,7 @@ const build = ()=> {
     _config.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
-            compress: {warning: false},
+            compress: {warnings: false},
             output: {comments: false}
         })
     );

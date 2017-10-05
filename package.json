@@ -33,6 +33,7 @@
         "less-loader": "^4.0.5",
         "lodash": "^4.17.4",
         "gulp-connect": "^5.0.0",
-        "open": "^0.0.5"
+        "open": "^0.0.5",
+        "gulp-util": "^3.0.8"
     }
 }
