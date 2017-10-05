@@ -24,7 +24,7 @@ gulp.task('default', ()=> {
                 port: 9527,
                 livereload: true
             });
-            open('http://localhost:9527/page/index.html');
+            open('http://localhost:9527/index.html');
         }
     })
 });
