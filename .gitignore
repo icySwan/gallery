@@ -3,4 +3,4 @@
 .idea
 npm-debug.log
 .vscode
-.node_modules
+node_modules
