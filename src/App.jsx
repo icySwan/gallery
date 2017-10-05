@@ -12,17 +12,23 @@ class App extends Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-        const self = this;
-        window.onhashchange = (e)=> {
-            const {newURL, oldURL} = e;
+    hashHandler() {
+        return ()=> {
             if(!location.hash) {
-                self.props.changeCurrent && self.props.changeCurrent('init');
+                if(this.props.status.current !== 'home') {
+                    this.props.changeCurrent && this.props.changeCurrent('home');
+                }
             } else {
                 const current = location.hash.replace(/#/g, '');
-                self.props.changeCurrent && self.props.changeCurrent(current);
+                this.props.changeCurrent && this.props.changeCurrent(current);
             }
         }
+    }
+    componentDidMount() {
+        if(location.hash) {
+            location.hash = '';
+        }
+        window.onhashchange = this.hashHandler();
     }
     render() {
         const {status} = this.props;
