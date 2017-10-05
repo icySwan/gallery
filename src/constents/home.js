@@ -3,6 +3,10 @@ export default {
     items : [
         {
             url: urlRoot + "/6176645488_IMG_3628.JPG",
+            slider: [
+                urlRoot + "/6176645488_IMG_3628.JPG",
+                urlRoot + "/6176645488_IMG_3628.JPG",
+            ],
             doc: {
                 date: "APRIL 9th, 2017",
                 title: "DANCE OF SAKURA",
@@ -11,6 +15,10 @@ export default {
         },
         {
             url: urlRoot + "/6176645488_IMG_3628.JPG",
+            slider: [
+                urlRoot + "/6176645488_IMG_3628.JPG",
+                urlRoot + "/6176645488_IMG_3628.JPG",
+            ],
             doc: {
                 date: "APRIL 9th, 2017",
                 title: "DANCE OF SAKURA",
@@ -19,6 +27,10 @@ export default {
         },
         {
             url: urlRoot + "/6176645488_IMG_3628.JPG",
+            slider: [
+                urlRoot + "/6176645488_IMG_3628.JPG",
+                urlRoot + "/6176645488_IMG_3628.JPG",
+            ],
             doc: {
                 date: "APRIL 9th, 2017",
                 title: "DANCE OF SAKURA",
@@ -27,6 +39,10 @@ export default {
         },
         {
             url: urlRoot + "/6176645488_IMG_3628.JPG",
+            slider: [
+                urlRoot + "/6176645488_IMG_3628.JPG",
+                urlRoot + "/6176645488_IMG_3628.JPG",
+            ],
             doc: {
                 date: "APRIL 9th, 2017",
                 title: "DANCE OF SAKURA",

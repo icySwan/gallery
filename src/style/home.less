@@ -10,6 +10,7 @@
         top: 0;
         color: #111;
         background-size: auto 100%;
+        background-repeat: no-repeat;
         .doc {
             width: 414px;
             max-width: 100%;
@@ -25,6 +26,17 @@
             padding: 4px;
             color: #555;
         }
+        .slider {
+            height: 100%;
+            width: 100%;
+            div {
+                height: 100%;
+                overflow: hidden;
+            }
+            .image {
+                height: 100%;
+            }
+        }
     }
 }
 @media (min-width:415px) {
@@ -32,6 +44,10 @@
         .item {
             height: 100%;
             background-size: 100% auto;
+            .slider .image {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 }
