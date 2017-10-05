@@ -9,7 +9,8 @@ const swipeOptions = {
     startSlide: 0,
     speed: 500,
     auto: 5000,
-    continuous: true
+    continuous: true,
+    disableScroll: true
 }
 
 class Home extends Component {

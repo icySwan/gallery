@@ -1,19 +1,12 @@
 .list {
-    position: relative;
-    min-height: 100%;
     font-family: 'swan';
-    &::after {
-        content: 'loading images..';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        font-size: 40px;
-        margin-left: -100px;
-        margin-top: -24px;
-    }
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
     .cell {
         width: 100%;
-        padding: 3px;
+        overflow: hidden;
         background-color: #eee;
         border-radius: 15px;
         z-index: 2;
