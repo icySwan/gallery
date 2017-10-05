@@ -11,6 +11,9 @@ class App extends Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        //TODO在这里做数据初始化
+    }
     render() {
         const {status} = this.props;
         let Page = null;
