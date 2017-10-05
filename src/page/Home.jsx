@@ -4,10 +4,11 @@ import Swipe from 'react-swipe';
 
 import '../style/home.less';
 
+const pfx = (window.innerWidth < 800) ? '?x-oss-process=style/percent50' : '';
 const swipeOptions = {
     startSlide: 0,
     speed: 500,
-    auto: 3000,
+    auto: 5000,
     continuous: true
 }
 
@@ -34,6 +35,7 @@ class Home extends Component {
                 <Swipe className="slider" swipeOptions={swipeOptions}>
                     {
                         slider.map((s, key)=> {
+                            s += pfx;
                             return <div key={"s-" + key}><img src={s} className="image" /></div>
                         })
                     }
