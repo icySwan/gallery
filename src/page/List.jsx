@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {getList} from '../constents/images';
+import Nav from '../component/Nav';
 import Swipe from 'react-swipe';
 
 import '../style/list.less';
@@ -39,6 +40,7 @@ class List extends Component {
         const {list, lastIndex, target} = this.state;
         const listForShow = list.slice(0, 10 * (1 + lastIndex));
         return <div className="list">
+            <Nav current="gallery" />
             {
                 listForShow.map((item, index)=> {
                     if(item) {

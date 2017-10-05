@@ -1,0 +1,32 @@
+.nav {
+    display: flex;
+    font-family: 'swan';
+    font-size: 20px;
+    background-color: #fff;
+    .nav-cell {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        cursor: pointer;
+        &.selected {
+            background-color: #ec5959;
+            color: #fff;
+            border-radius: 5px;
+        }
+    }
+    .back {
+        width: 60px;
+        position: relative;
+        cursor: pointer;
+        &::after {
+            content: ' ';
+            border-left: 1px solid #111;
+            border-top: 1px solid #111;
+            left: 25px;
+            top: 13px;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            transform: rotate(-45deg);
+        }
+    }
+}

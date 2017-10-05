@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {items} from '../constents/home';
+import Nav from '../component/Nav';
 import Swipe from 'react-swipe';
 
 import '../style/home.less';
@@ -59,7 +60,10 @@ class Home extends Component {
                 </div>
             </div>
         })
-        return <div className="home">{$target}</div>;
+        return <div className="home">
+            <Nav />
+            {$target}
+        </div>;
     }
 }
 

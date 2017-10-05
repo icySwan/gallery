@@ -19,6 +19,38 @@ h5,
 p {
   margin: 0;
 }
+.nav {
+  display: flex;
+  font-family: 'swan';
+  font-size: 20px;
+  background-color: #fff;
+}
+.nav .nav-cell {
+  padding: 5px 10px;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+.nav .nav-cell.selected {
+  background-color: #ec5959;
+  color: #fff;
+  border-radius: 5px;
+}
+.nav .back {
+  width: 60px;
+  position: relative;
+  cursor: pointer;
+}
+.nav .back::after {
+  content: ' ';
+  border-left: 1px solid #111;
+  border-top: 1px solid #111;
+  left: 25px;
+  top: 13px;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  transform: rotate(-45deg);
+}
 .home {
   height: 100%;
   overflow: auto;
@@ -118,3 +150,5 @@ p {
   width: 100%;
   z-index: 4;
 }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpbmRleC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
