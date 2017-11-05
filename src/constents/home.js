@@ -4,6 +4,7 @@ const path = {
     4: urlRoot + '/2016france/',
     3: urlRoot + '/2016italy/',
     2: urlRoot + '/2016greece/',
+    1: urlRoot + '/2016hangzhouWeddingPhotos/'
 };
 
 export default {
@@ -69,6 +70,22 @@ export default {
                 date: "SEPTEMBER 1th, 2016",
                 title: "AEGEAN SEA AND ATHENS",
                 des: "In this afternoon the body is a BLUES, dancing with the lively Aegean Sea, dancing and dancing just like dancing in Athens."
+            }
+        },
+        {
+            id: 1,
+            url: path[1] + "0F1A9425.jpg",
+            slider: [
+                path[1] + "0F1A9425.jpg",
+                path[1] + "L_YJ0943.jpg",
+                path[1] + "L_YJ0875.jpg",
+                path[1] + "1P8A8777.jpg",
+                path[1] + "L_YJ0861.jpg"
+            ],
+            doc: {
+                date: "MAY 17th, 2016",
+                title: "THE WEDDING DRESS",
+                des: "We have finished our wedding photos by the west lak."
             }
         }
     ]
