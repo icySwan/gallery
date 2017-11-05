@@ -71,6 +71,21 @@ class List extends Component {
             }
         }
     }
+    onCategoryClick(index) {
+        return (e)=> {
+            const {selectedCategory, list} = this.state;
+            const newCategory = list[index]['category'];
+
+            if(selectedCategory !== newCategory) {
+                this.setState({
+                    selectedCategory: newCategory
+                });
+            }
+
+            const swInstance = this.refs.sw;
+            swInstance.slide(index, 500);
+        }
+    }
     render() {
         const {list, lastIndex, target, categoryLastIndex, selectedCategory} = this.state;
         //带分类的
@@ -81,11 +96,11 @@ class List extends Component {
                     {
                         list.map((item, index)=> {
                             const cls = selectedCategory === item.category ? " selected" : "";
-                            return <div className="cell" key={item.category}><span className={"txt" + cls}>{item.category}</span></div>
+                            return <div onClick={this.onCategoryClick(index)} className="cell" key={item.category}><span className={"txt" + cls}>{item.category}</span></div>
                         })
                     }
                 </div>
-                <Swipe swipeOptions={{
+                <Swipe ref="sw" swipeOptions={{
                     transitionEnd: this.swipeEnd()
                 }}>
                     {
