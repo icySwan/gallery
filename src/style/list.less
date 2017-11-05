@@ -42,4 +42,28 @@
             z-index: 4;
         }
     }
+    .category-list {
+        display: flex;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+        z-index: 2;
+        .cell {
+            flex: 1;
+            background-color: #fff;
+            text-align: center;
+        }
+        .txt {
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 4px;
+            &.selected {
+                background-color: #ec5959;
+                color: #fff;
+            }
+        }
+    }
 }

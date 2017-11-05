@@ -150,5 +150,29 @@ p {
   width: 100%;
   z-index: 4;
 }
+.list .category-list {
+  display: flex;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+.list .category-list .cell {
+  flex: 1;
+  background-color: #fff;
+  text-align: center;
+}
+.list .category-list .txt {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 4px;
+}
+.list .category-list .txt.selected {
+  background-color: #ec5959;
+  color: #fff;
+}
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpbmRleC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
