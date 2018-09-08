@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {items} from '../constents/home';
 import Nav from '../component/Nav';
-import Swipe from 'react-swipe';
+// import Swipe from 'react-swipe';
 
 import '../style/home.less';
 
 const pfx = (window.innerWidth < 800) ? '?x-oss-process=style/percent50' : '';
-const swipeOptions = {
-    startSlide: 0,
-    speed: 500,
-    auto: 5000,
-    continuous: true,
-    disableScroll: true
-}
+// const swipeOptions = {
+//     startSlide: 0,
+//     speed: 500,
+//     auto: 5000,
+//     continuous: true,
+//     disableScroll: true
+// }
 
 class Home extends Component {
     constructor(props) {
@@ -23,13 +23,13 @@ class Home extends Component {
         }
     }
     componentDidMount() {
-        const self = this;
-        let timer = setTimeout(()=> {
-            clearTimeout(timer);
-            self.setState({
-                enableSlider: true
-            })
-        }, 2000);
+        // const self = this;
+        // let timer = setTimeout(()=> {
+        //     clearTimeout(timer);
+        //     self.setState({
+        //         enableSlider: true
+        //     })
+        // }, 2000);
     }
     onClick(id) {
         return (e)=> {
@@ -45,14 +45,14 @@ class Home extends Component {
             }
             return <div className="item" key={index} style={style} onClick={this.onClick(id)}>
                 {
-                    enableSlider ? <Swipe className="slider" swipeOptions={swipeOptions}>
-                    {
-                        slider.map((s, key)=> {
-                            s += pfx;
-                            return <div key={"s-" + key}><img src={s} className="image" /></div>
-                        })
-                    }
-                </Swipe> : null
+                //     enableSlider ? <Swipe className="slider" swipeOptions={swipeOptions}>
+                //     {
+                //         slider.map((s, key)=> {
+                //             s += pfx;
+                //             return <div key={"s-" + key}><img src={s} className="image" /></div>
+                //         })
+                //     }
+                // </Swipe> : null
                 }
                 <div className="doc">
                     <h2 className="title">{doc.title}</h2>
