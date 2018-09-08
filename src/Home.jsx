@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Home from './page/home';
-import initReactFastClick from 'react-fastclick';
 import * as Actions from './action/index';
-
-initReactFastClick();
 
 class App extends Component {
     constructor(props) {
@@ -20,7 +17,7 @@ class App extends Component {
 
 const mapStateToProps = (state)=> {
     return {
-        status: state.status
+        status: state.home
     }
 }
 

@@ -3,14 +3,17 @@
     "version": "0.0.1",
     "description": "gallery for swan",
     "dependencies": {
-        "react": "^16.0.0",
-        "react-dom": "^16.0.0",
+        "react": "^16.5.0",
+        "react-dom": "^16.5.0",
         "react-fastclick": "^3.0.2",
-        "redux": "^3.7.2",
-        "react-redux": "^5.0.6",
+        "redux": "^4.0.0",
+        "react-redux": "^5.0.7",
         "redux-thunk": "^2.2.0",
         "react-swipe": "^5.1.0",
-        "react-router": "^4.2.0"
+        "react-router": "^4.3.1",
+        "react-router-dom": "^4.3.1",
+        "connected-react-router": "^4.4.1",
+        "history": "^4.7.2"
     },
     "devDependencies": {
         "gulp": "^3.9.1",

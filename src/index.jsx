@@ -1,29 +1,42 @@
 import './style/index.less';
 import React from 'react';
-import {render} from 'react-dom';
-import {createStore, applyMiddleware} from 'redux';
-import {Provider} from 'react-redux';
+import { render } from 'react-dom';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import { createBrowserHistory } from "history";
+import { connectRouter, routerMiddleware, ConnectedRouter } from 'connected-react-router'
+import { Route, Switch } from "react-router";
+
+import initReactFastClick from 'react-fastclick';
 import reducer from './reducer';
 import Home from './Home';
 import List from './List';
 
-const middleware = [thunk];
+initReactFastClick();
+
+const history = createBrowserHistory();
+const middleware = routerMiddleware(history);
 const store = createStore(
-    reducer,
-    applyMiddleware(...middleware)
+    connectRouter(history)(reducer),
+    compose(
+        applyMiddleware(
+            routerMiddleware(history),
+            thunk
+        ),
+    ),
 );
 
-let path = location.href.split('?')[0].split('/');
-path = path.pop().split('.')[0];
-
-let Page = Home;;
-if(path === 'list') {
-    Page = List;
-}
 render(
     <Provider store={store}>
-        <Page />
+        <ConnectedRouter history={history}>
+            <div> { /* your usual react-router v4 routing */}
+                <Switch>
+                    <Route exact path="/list.html" component={List} />
+                    <Route component={Home} />
+                </Switch>
+            </div>
+        </ConnectedRouter>
     </Provider>,
     document.getElementById('App')
 )
