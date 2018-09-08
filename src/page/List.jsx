@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {getList} from '../constents/images';
 import Nav from '../component/Nav';
-import Swipe from 'react-swipe';
 
 import '../style/list.less';
 
@@ -60,17 +59,17 @@ class List extends Component {
             });
         }
     }
-    swipeEnd() {
-        return (i, e)=> {
-            const {selectedCategory, list} = this.state;
-            const newCategory = list[i]['category'];
-            if(selectedCategory !== newCategory) {
-                this.setState({
-                    selectedCategory: newCategory
-                });
-            }
-        }
-    }
+    // swipeEnd() {
+    //     return (i, e)=> {
+    //         const {selectedCategory, list} = this.state;
+    //         const newCategory = list[i]['category'];
+    //         if(selectedCategory !== newCategory) {
+    //             this.setState({
+    //                 selectedCategory: newCategory
+    //             });
+    //         }
+    //     }
+    // }
     onCategoryClick(index) {
         return (e)=> {
             const {selectedCategory, list} = this.state;
@@ -80,17 +79,15 @@ class List extends Component {
                 this.setState({
                     selectedCategory: newCategory
                 });
+                window.scrollTo(0, 0);
             }
-
-            const swInstance = this.refs.sw;
-            swInstance.slide(index, 500);
         }
     }
     render() {
         const {list, lastIndex, target, categoryLastIndex, selectedCategory} = this.state;
         //带分类的
         if(list.length >=1 && list[0].category) {
-            return <div className="list">
+            return <div className="list with-category">
                 <Nav current="gallery" />
                 <div className="category-list">
                     {
@@ -100,11 +97,9 @@ class List extends Component {
                         })
                     }
                 </div>
-                <Swipe ref="sw" swipeOptions={{
-                    transitionEnd: this.swipeEnd()
-                }}>
-                    {
-                        list.map((item, index)=> {
+                {
+                    list.map((item, index)=> {
+                        if(selectedCategory === item.category) {
                             const category = item.category;
                             const imgsForShow = item.imgs.slice(0, 10 * (1 + categoryLastIndex[category]));
                             return <div className="list-content" key={index}>
@@ -117,12 +112,15 @@ class List extends Component {
                                 }
                                 <div className="more" onClick={this.onClick(category)}>click to load more...</div>
                             </div>
-                        })
-                    }
-                </Swipe>
+                        } else {
+                            return null;
+                        }
+                    })
+                }
                 {
-                    target ? <div className="show" onClick={this.onHide()}>
+                    target ? <div className="show">
                         <img src={target} className="show-img"/>
+                        <div className="close" onClick={this.onHide()}>X</div>
                     </div>: null
                 }
             </div>

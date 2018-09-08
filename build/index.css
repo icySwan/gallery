@@ -27,7 +27,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 2;
 }
 .nav .nav-cell {
   padding: 5px 10px;
@@ -119,6 +119,9 @@ p {
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
 }
+.list .nav {
+  background-color: #fff;
+}
 .list .cell {
   width: 100%;
   overflow: hidden;
@@ -138,10 +141,10 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
-  z-index: 3;
+  z-index: 4;
 }
 .list .show::after {
   content: 'loading uncompressed image...';
@@ -151,11 +154,24 @@ p {
   font-size: 24px;
   margin-left: -120px;
   margin-top: -14px;
+  color: #fff;
 }
 .list .show .show-img {
   display: block;
   width: 100%;
   z-index: 4;
+}
+.list .show .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  padding: 20px;
+  color: #fff;
+  font-family: arial;
+  font-size: 20px;
+  text-align: center;
 }
 .list .category-list {
   display: flex;
@@ -182,9 +198,11 @@ p {
   background-color: #ec5959;
   color: #fff;
 }
+.list .list-content,
 .list .react-swipe-container {
   margin-top: 44px;
 }
+.list.with-category .list-content,
 .list.with-category .react-swipe-container {
   margin-top: 81px;
 }
